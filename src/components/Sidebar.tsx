@@ -11,7 +11,7 @@ import logo from "../assets/logo.svg"
 
 function Sidebar() {
   return (
-    <section className="flex flex-col h-[90%] col-span-3 row-span-10 [&>article]:bg-zinc-900 [&>article]:p-5 [&>article]:gap-1 [&>article]:m-2 [&>article]:rounded-lg">
+    <section className="sticky top-0 flex flex-col h-[90vh] gap-3 col-span-3 row-span-10 [&>article]:bg-zinc-900 [&>article]:p-5 [&>article]:gap-1 [&>article]:rounded-lg">
         <article>
             <ul className="text-start [&>li]:flex [&>li]:gap-2 [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
                 <li className="pointer-events-none">
@@ -54,9 +54,9 @@ function Sidebar() {
                     </div>
                 </li>
                 <li className="[&>button]:text-sm [&>button]:rounded-2xl [&>button]:bg-zinc-800 [&>button]:px-5 [&>button]:py-1 flex gap-2">
-                    <button>Playlists</button>
-                    <button>Artists</button>
-                    <button>Albums</button>
+                    <button className="hover:bg-zinc-700">Playlists</button>
+                    <button className="hover:bg-zinc-700">Artists</button>
+                    <button className="hover:bg-zinc-700">Albums</button>
                 </li>
             </ul>
         </article>
