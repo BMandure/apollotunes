@@ -1,7 +1,9 @@
-import React from "react";
-
 function Player() {
-  return <div className="fixed bottom-0 h-[10%] w-full">Player</div>;
+  return (
+    <div className="h-[4.2rem] col-span-12 flex-1 rounded bg-zinc-900">
+      Player
+    </div>
+  );
 }
 
 export default Player;
