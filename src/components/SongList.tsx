@@ -3,9 +3,9 @@ import Song from "./Song";
 
 function SongList() {
   return (
-    <section className="flex flex-col h-[90vh] col-span-9 row-span-10 bg-gradient-to-b from-[#64bd9f] from-20% to-zinc-900 to-50% [&>article]:rounded rounded">
+    <section className="flex flex-col !max-h-[90vh] w-[80%] bg-gradient-to-b from-[#64bd9f] from-20% to-zinc-900 to-50% [&>article]:rounded rounded">
       <Header />
-      <article className="flex-1 text-white py-[2rem] px-[5rem] overflow-auto backdrop-blur-3xl">
+      <article className="flex-1 text-white py-[2rem] pt-0 px-[5rem] overflow-auto backdrop-blur-sm">
         <table className="w-full [&>thead>th]:text-start [&>tbody>tr]:text-start">
           <thead className="sticky top-0">
             <tr>

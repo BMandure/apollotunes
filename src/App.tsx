@@ -5,9 +5,11 @@ import SongList from "./components/SongList";
 
 function App() {
   return (
-    <main className="grid grid-cols-12 grid-row-12 gap-2 h-screen w-full p-3 bg-black">
-      <Sidebar />
-      <SongList />
+    <main className="gap-3 h-screen w-full p-3 pb-0 bg-black">
+      <div className="flex gap-3 !max-h-[89vh]">
+        <Sidebar />
+        <SongList />
+      </div>
       <Player />
     </main>
   );

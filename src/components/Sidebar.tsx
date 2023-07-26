@@ -4,15 +4,14 @@ import { Tooltip } from "antd";
 import searchImg from "../assets/search.svg";
 import homeImg from "../assets/home.svg";
 import libraryImg from "../assets/library.svg";
-import arrowRightImg from "../assets/arrow-right.svg";
 import addImg from "../assets/add.svg";
 import logo from "../assets/logo.svg";
 import LibraryList from "./LibraryList";
 
 function Sidebar() {
   return (
-    <section className="flex flex-col max-h-[90vh] gap-3 col-span-3 row-span-10 [&>article]:bg-zinc-900 [&>article]:p-5 [&>article]:gap-1 [&>article]:rounded-lg">
-      <article>
+    <section className="flex flex-col gap-3 w-[20%] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg">
+      <article className="flex flex-col max-h-[30%]">
         <ul className="text-start [&>li]:flex [&>li]:gap-2 [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
           <li className="pointer-events-none">
             <img src={logo} alt="" className="w-[30px] h-[30px]" />
@@ -41,7 +40,7 @@ function Sidebar() {
         </ul>
       </article>
 
-      <article className="flex flex-col h-full">
+      <article className="flex flex-col flex-grow h-full">
         <ul className="text-start [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
           <li className="flex justify-between [&>div]:flex">
             <div className="flex gap-2">
