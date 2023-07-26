@@ -1,4 +1,3 @@
-import play from "../assets/play.svg";
 import test from "../assets/add.svg";
 
 function Header() {
