@@ -9,16 +9,20 @@ function Header() {
           <img className="w-[30px] h-[30px]" src={test} alt="search_icon" />
         </button>
       </div>
-      <div className="flex">
-        <div className="bg-main rounded-lg min-w-[250px] h-[250px]">
+      <div className="flex max-[1050px]:flex-col">
+        <div className="bg-main rounded-lg !w-[250px] !h-[250px]">
           <img src={test} alt="album/artist_image" />
         </div>
-        <div className="flex flex-col justify-between items-start p-5 [&]:font-semibold text-white">
+        <div className="flex flex-col justify-between items-start p-5 gap-3 [&]:font-semibold text-white">
           <small className="text-[1rem]">Category test</small>
           <h2 className="max-[1080px]:text-[2rem] text-[3rem] min-[1275px]:text-[4rem] leading-tight">
             Test list name
           </h2>
 
+          <span className="text-left flex gap-3 items-center">
+            <img src={test} alt="" className="h-8" />
+            <p>Username / Artist &#x2022; 935 songs</p>
+          </span>
           <button
             id="play"
             className="w-[70px] h-[70px] border-transparent hover:border-2 hover:border-white rounded-[50%]"
@@ -37,10 +41,6 @@ function Header() {
           </button>
         </div>
       </div>
-      <span className="text-left pt-4 flex gap-3 items-center">
-        <img src={test} alt="" className="h-8" />
-        <p>Username / Artist &#x2022; 935 songs</p>
-      </span>
     </article>
   );
 }

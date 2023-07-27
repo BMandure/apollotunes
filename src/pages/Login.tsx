@@ -6,7 +6,7 @@ function Login() {
     import.meta.env.VITE_APP_URL
   }`;
   return (
-    <main className="text-white border-8 border-main w-full h-full flex flex-col justify-center items-center gap-5">
+    <main className="text-white border-8 border-main w-[50%] mx-auto translate-y-32 h-[70%] flex flex-col justify-center items-center gap-5">
       <section className="flex flex-col [&>article]:flex [&>article]:gap-2 [&>article]:items-center">
         <article>
           <img

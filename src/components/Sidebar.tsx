@@ -10,7 +10,7 @@ import LibraryList from "./LibraryList";
 
 function Sidebar() {
   return (
-    <section className="flex flex-col gap-3 w-[350px] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg">
+    <section className="flex flex-col gap-3 max-w-[350px] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg">
       <article className="flex flex-col max-h-[30%]">
         <ul className="text-start [&>li]:flex [&>li]:gap-2 [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
           <li className="pointer-events-none">
