@@ -9,11 +9,12 @@ function Header() {
           <img className="w-[30px] h-[30px]" src={test} alt="search_icon" />
         </button>
       </div>
-      <div className="flex max-[1050px]:flex-col">
+
+      <div className="flex max-[1080px]:flex-col max-[1080px]:items-center">
         <div className="bg-main rounded-lg !w-[250px] !h-[250px]">
           <img src={test} alt="album/artist_image" />
         </div>
-        <div className="flex flex-col justify-between items-start p-5 gap-3 [&]:font-semibold text-white">
+        <div className="flex flex-col justify-between items-start p-5 gap-3 [&]:font-semibold text-white [&>h2]:max-[1080px]:text-center [&>h2]:max-[1080px]:w-full [&>span]:max-[1080px]:text-center [&>span]:max-[1080px]:w-full [&>button]:max-[1080px]:text-center [&>button]:max-[1080px]:mx-auto [&>small]:max-[1080px]:text-center [&>small]:max-[1080px]:w-full">
           <small className="text-[1rem]">Category test</small>
           <h2 className="max-[1080px]:text-[2rem] text-[3rem] min-[1275px]:text-[4rem] leading-tight">
             Test list name

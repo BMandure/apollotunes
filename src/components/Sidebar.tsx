@@ -10,31 +10,37 @@ import LibraryList from "./LibraryList";
 
 function Sidebar() {
   return (
-    <section className="flex flex-col gap-3 max-w-[350px] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg">
+    <section className="flex flex-col gap-3 min-w-[70px] max-[920px]:w-[100px] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg">
       <article className="flex flex-col max-h-[30%]">
         <ul className="text-start [&>li]:flex [&>li]:gap-2 [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
-          <li className="pointer-events-none">
+          <li className="pointer-events-none max-[920px]:flex max-[920px]:justify-center">
             <img src={logo} alt="" className="w-[30px] h-[30px]" />
-            <h1 className="text-2xl">APOLLOTUNE</h1>
+            <h1 className="text-2xl max-[920px]:hidden">APOLLOTUNE</h1>
           </li>
           <li>
-            <Link to="#" className="flex gap-2 w-full">
+            <Link
+              to="#"
+              className="flex gap-2 w-full max-[920px]:justify-center"
+            >
               <img
                 src={homeImg}
                 alt="home_icon"
                 className="w-[30px] h-[30px]"
               />
-              Home
+              <span className="max-[920px]:hidden">Home</span>
             </Link>
           </li>
           <li>
-            <Link to="#" className="flex gap-2 w-full">
+            <Link
+              to="#"
+              className="flex gap-2 w-full max-[920px]:justify-center"
+            >
               <img
                 src={searchImg}
                 alt="search_icon"
                 className="w-[30px] h-[30px]"
               />
-              Search
+              <span className="max-[920px]:hidden">Search</span>
             </Link>
           </li>
         </ul>
@@ -42,16 +48,16 @@ function Sidebar() {
 
       <article className="flex flex-col flex-grow h-full">
         <ul className="text-start [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
-          <li className="flex justify-between [&>div]:flex">
-            <div className="flex gap-2">
+          <li className="flex justify-between [&>div]:flex max-[920px]:justify-center">
+            <div className="flex gap-2 max-[920px]:justify-center">
               <img
                 className="w-[30px] h-[30px]"
                 src={libraryImg}
                 alt="search_icon"
               />
-              <p>Library</p>
+              <span className="max-[920px]:hidden">Library</span>
             </div>
-            <div className="gap-4">
+            <div className="gap-4 max-[920px]:!hidden max-[920px]:w-0">
               <Tooltip
                 placement="top"
                 title="Create playlist or folder"
@@ -68,7 +74,7 @@ function Sidebar() {
               </Tooltip>
             </div>
           </li>
-          <li className="[&>button]:text-sm [&>button]:rounded-2xl [&>button]:bg-zinc-800 [&>button]:px-5 [&>button]:py-1 flex gap-2">
+          <li className="max-[920px]:hidden [&>button]:text-sm [&>button]:rounded-2xl [&>button]:bg-zinc-800 [&>button]:px-5 [&>button]:py-1 flex gap-2">
             <button className="hover:bg-zinc-700">Playlists</button>
             <button className="hover:bg-zinc-700">Artists</button>
             <button className="hover:bg-zinc-700">Albums</button>
