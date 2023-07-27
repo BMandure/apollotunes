@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        main: "rgba(100, 189, 159)",
+        "main-transparent": "rgba(100, 189, 159, 0.5)",
+      },
+    },
   },
   plugins: [],
 };

@@ -1,17 +1,49 @@
 import { Tooltip } from "antd";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import sound from "../assets/sound.svg";
 
+type Repeat = "y" | "n" | "one";
+const repeatTypes: Repeat[] = ["y", "n", "one"];
+
 function Player() {
+  const [playing, setPlaying] = useState<boolean>(false);
+  const [repeat, setRepeat] = useState<Repeat>(repeatTypes[1]);
+  const [shuffle, setShuffle] = useState<boolean>(false);
+
+  const handlePlay = (): void => {
+    setPlaying(!playing);
+  };
+
+  const handleShuffle = (): void => {
+    setShuffle(!shuffle);
+  };
+
+  const handleRepeat = (): void => {
+    switch (repeat) {
+      // @ts-ignore
+      case "y":
+        setRepeat(repeatTypes[1]);
+        console.log("to n");
+        break;
+      // @ts-ignore
+      case "n":
+        setRepeat(repeatTypes[2]);
+        console.log("to one");
+        break;
+      // @ts-ignore
+      case "one":
+        setRepeat(repeatTypes[0]);
+        console.log("to y");
+        break;
+    }
+  };
+
   return (
     <div className="text-white flex w-full justify-between px-2 pt-3 items-center basis-0">
       <div className="flex flex-grow gap-5 items-center basis-0">
-        <img
-          src="..."
-          alt="Album_Img"
-          className="h-[70px] w-[70px] bg-[#64bd9f]"
-        />
+        <img src="..." alt="Album_Img" className="h-[70px] w-[70px] bg-main" />
         <div className="text-left flex flex-col">
           <Link to="#" className="hover:underline font-bold text-sm">
             SongName
@@ -42,24 +74,55 @@ function Player() {
       </div>
       <div className="flex flex-col h-full items-center gap-2">
         <div className="flex gap-5 [&>button]:h-[22px] [&>button]:w-[22px] [&>button>svg]:h-full [&>button>svg]:w-full items-center">
-          <Tooltip placement="top" title="Shuffle" color="gray" arrow={false}>
-            <button id="shuffle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-shuffle"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"
-                />
-                <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z" />
-              </svg>
-            </button>
-          </Tooltip>
+          {shuffle ? (
+            <Tooltip
+              placement="top"
+              title="Disable Shuffle"
+              color="gray"
+              arrow={false}
+            >
+              <button id="shuffle" onClick={handleShuffle}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="rgba(100, 189, 159)"
+                  className="bi bi-shuffle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"
+                  />
+                  <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z" />
+                </svg>
+              </button>
+            </Tooltip>
+          ) : (
+            <Tooltip
+              placement="top"
+              title="Enable Shuffle"
+              color="gray"
+              arrow={false}
+            >
+              <button id="shuffle" onClick={handleShuffle}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-shuffle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"
+                  />
+                  <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z" />
+                </svg>
+              </button>
+            </Tooltip>
+          )}
           <Tooltip placement="top" title="Previous" color="gray" arrow={false}>
             <button id="previous">
               <svg
@@ -74,35 +137,43 @@ function Player() {
               </svg>
             </button>
           </Tooltip>
-          <Tooltip placement="top" title="Play" color="gray" arrow={false}>
-            <button id="play" className="!w-[40px] !h-[40px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-play-circle"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
-              </svg>
-            </button>
-          </Tooltip>
-          {/*
-          <button id="pause">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-pause-circle"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-              <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z" />
-            </svg>
-  </button>*/}
+
+          {playing ? (
+            <Tooltip placement="top" title="Pause" color="gray" arrow={false}>
+              <button id="pause" className="!w-[40px] !h-[40px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-pause-circle"
+                  viewBox="0 0 16 16"
+                  onClick={handlePlay}
+                >
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z" />
+                </svg>
+              </button>
+            </Tooltip>
+          ) : (
+            <Tooltip placement="top" title="Play" color="gray" arrow={false}>
+              <button id="play" className="!w-[40px] !h-[40px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-play-circle"
+                  viewBox="0 0 16 16"
+                  onClick={handlePlay}
+                >
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
+                </svg>
+              </button>
+            </Tooltip>
+          )}
+
           <Tooltip placement="top" title="Next" color="gray" arrow={false}>
             <button id="next">
               <svg
@@ -117,34 +188,68 @@ function Player() {
               </svg>
             </button>
           </Tooltip>
-          <Tooltip placement="top" title="Repeat" color="gray" arrow={false}>
-            <button id="repeat">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-repeat"
-                viewBox="0 0 16 16"
-              >
-                <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z" />
-              </svg>
-            </button>
-          </Tooltip>
-          {/*
-          <button id="repeat-one">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-repeat-1"
-              viewBox="0 0 16 16"
+          {repeat === "one" ? (
+            <Tooltip
+              placement="top"
+              title="Repeat All"
+              color="gray"
+              arrow={false}
             >
-              <path d="M11 4v1.466a.25.25 0 0 0 .41.192l2.36-1.966a.25.25 0 0 0 0-.384l-2.36-1.966a.25.25 0 0 0-.41.192V3H5a5 5 0 0 0-4.48 7.223.5.5 0 0 0 .896-.446A4 4 0 0 1 5 4h6Zm4.48 1.777a.5.5 0 0 0-.896.446A4 4 0 0 1 11 12H5.001v-1.466a.25.25 0 0 0-.41-.192l-2.36 1.966a.25.25 0 0 0 0 .384l2.36 1.966a.25.25 0 0 0 .41-.192V13h6a5 5 0 0 0 4.48-7.223Z" />
-              <path d="M9 5.5a.5.5 0 0 0-.854-.354l-1.75 1.75a.5.5 0 1 0 .708.708L8 6.707V10.5a.5.5 0 0 0 1 0v-5Z" />
-            </svg>
-          </button>*/}
+              <button id="repeat-one" onClick={handleRepeat}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="rgba(100, 189, 159)"
+                  className="bi bi-repeat-1"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 4v1.466a.25.25 0 0 0 .41.192l2.36-1.966a.25.25 0 0 0 0-.384l-2.36-1.966a.25.25 0 0 0-.41.192V3H5a5 5 0 0 0-4.48 7.223.5.5 0 0 0 .896-.446A4 4 0 0 1 5 4h6Zm4.48 1.777a.5.5 0 0 0-.896.446A4 4 0 0 1 11 12H5.001v-1.466a.25.25 0 0 0-.41-.192l-2.36 1.966a.25.25 0 0 0 0 .384l2.36 1.966a.25.25 0 0 0 .41-.192V13h6a5 5 0 0 0 4.48-7.223Z" />
+                  <path d="M9 5.5a.5.5 0 0 0-.854-.354l-1.75 1.75a.5.5 0 1 0 .708.708L8 6.707V10.5a.5.5 0 0 0 1 0v-5Z" />
+                </svg>
+              </button>
+            </Tooltip>
+          ) : repeat === "y" ? (
+            <Tooltip
+              placement="top"
+              title="Disable Repeat"
+              color="gray"
+              arrow={false}
+            >
+              <button id="repeat" onClick={handleRepeat}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="rgba(100, 189, 159)"
+                  className="bi bi-repeat"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z" />
+                </svg>
+              </button>
+            </Tooltip>
+          ) : (
+            <Tooltip
+              placement="top"
+              title="Enable Repeat One"
+              color="gray"
+              arrow={false}
+            >
+              <button id="no-repeat" onClick={handleRepeat}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-repeat"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z" />
+                </svg>
+              </button>
+            </Tooltip>
+          )}
         </div>
         <div className="flex gap-2">
           <small>4:50</small>
@@ -164,13 +269,7 @@ function Player() {
           </button>
         </Tooltip>
         <Tooltip placement="top" title="Volume: 20" color="gray" arrow={false}>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={20}
-            className="accent-[#64bd9f]"
-          />
+          <input type="range" min="0" max="100" className="accent-[#64bd9f]" />
         </Tooltip>
       </div>
     </div>

@@ -2,7 +2,7 @@ import test from "../assets/add.svg";
 
 function Header() {
   return (
-    <article className="m-0 px-[5rem] py-5 flex flex-col text-white">
+    <article className="m-0 px-[5rem] py-5 flex flex-col text-white bg-gradient-to-b from-[#64bd9f] from-40% to-zinc-900 to-100% ">
       <div className="h-[40px] min-w-[40px] mb-2 ms-auto flex">
         <button className="flex hover:bg-zinc-700 text-sm rounded-3xl bg-zinc-800 ps-3 pe-1 py-1 items-center gap-5">
           <p>Username</p>
@@ -10,12 +10,14 @@ function Header() {
         </button>
       </div>
       <div className="flex">
-        <div className="bg-[#8cd3bb] rounded-lg w-[250px] h-[250px]">
+        <div className="bg-main rounded-lg min-w-[250px] h-[250px]">
           <img src={test} alt="album/artist_image" />
         </div>
         <div className="flex flex-col justify-between items-start p-5 [&]:font-semibold text-white">
           <small className="text-[1rem]">Category test</small>
-          <h2 className="text-[5rem] leading-tight">Test list name</h2>
+          <h2 className="max-[1080px]:text-[2rem] text-[3rem] min-[1275px]:text-[4rem] leading-tight">
+            Test list name
+          </h2>
 
           <button
             id="play"

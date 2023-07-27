@@ -7,7 +7,7 @@
 }
 ::-webkit-scrollbar {
   /* Customize the scrollbar width */
-  width: 10px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -15,5 +15,6 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: whitesmoke;
+  background-color: rgba(100, 189, 159, 0.5);
+  border-radius: 5px;
 }
