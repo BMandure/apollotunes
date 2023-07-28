@@ -15,59 +15,43 @@ function LoginModal() {
 
   return (
     <>
-      <button
-        onClick={handleShowModal}
-        className="w-[150px] px-4 py-3 border-2 border-main rounded-3xl"
-      >
-        Login
-      </button>
+      <Button
+        text="Login"
+        action={() => {
+          handleShowModal();
+        }}
+      />
+
       {showModal && (
-        <div className="h-full w-full absolute left-0 top-0">
-          <div className="h-full [&>div]:flex [&>div]:flex-col [&>div]:items-center [&>div]:justify-center [&>div]:bg-black">
-            <div className="h-[20%] text-3xl pt-16 flex flex-col gap-5">
-              <div className="flex gap-5 items-center">
-                <img
-                  src={logo}
-                  alt="apollotunes_logo"
-                  className="w-[70px] h-[70px]"
-                />
-                <span className="text-[3rem]">APOLLOTUNES</span>
-              </div>
+        <div className="h-full w-full absolute left-0 top-0 border-3 p-10 flex flex-col bg-black">
+          <div className="h-full w-full absolute left-0 top-0 border-3 p-10 flex flex-col bg-black">
+            <div className="flex items-center justify-center h-1/6 gap-5">
+              <img src={logo} alt="" className="w-[70px] h-[70px]" />
+              <span className="text-[2rem]">LOGIN</span>
             </div>
-            <div className="h-[60%] flex flex-col items-start">
-              <p className="text-[2rem]">Login</p>
-              <form
-                action=""
-                className="flex flex-col gap-3 [&>label]:text-start [&>label]:ps-5 [&>label]:text-xl [&>label]:pt-3"
-              >
-                <label htmlFor="username-login">Username</label>
-                <input
-                  className="border-2 border-main bg-transparent rounded-3xl h-[40px] w-[300px] px-4 text-sm text-center"
-                  type="text"
-                  name="username-login"
-                  id="username-login"
-                />
-                <label htmlFor="password-login">Password</label>
-                <input
-                  className="border-2 border-main bg-transparent rounded-3xl h-[40px] w-[300px] px-4 text-sm text-center"
-                  type="password"
-                  name="password-login"
-                  id="password-login"
-                />
-              </form>
-            </div>
-            <div className="h-[20%] w-full !flex-row gap-5 pb-10">
+            <form
+              action=""
+              className="flex flex-col w-[60%] mx-auto flex-1 [&>label]:py-5 [&>label]:text-2xl [&>input]:border-2 [&>input]:border-main [&>input]:rounded-3xl [&>input]:h-[40px] [&>input]:bg-transparent [&>input]:px-5"
+            >
+              <label htmlFor="username">Username</label>
+              <input type="text" name="username" id="username" />
+              <label htmlFor="password">Password</label>
+              <input type="password" name="password" id="password" />
+            </form>
+            <div className="flex items-center justify-between gap-5 h-1/6 w-[60%] mx-auto">
               <Button
-                text="Back"
+                text="Close"
                 action={() => {
                   handleCloseModal();
                 }}
+                closeButton={true}
               />
               <Button
                 text="Login"
                 action={() => {
-                  console.log("login");
+                  console.log("Login");
                 }}
+                closeButton={false}
               />
             </div>
           </div>

@@ -17,7 +17,7 @@ function Login() {
         </article>
         <article className="h-[15vh] flex items-center gap-8">
           <LoginModal />
-          <p className="text-main">Or</p>
+          <p className="text-main px-6">Or</p>
           <RegisterModal />
         </article>
       </section>
