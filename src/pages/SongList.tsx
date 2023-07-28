@@ -1,10 +1,8 @@
 import Header from "../components/Header";
 import Song from "../components/Song";
+import { id } from "../../types";
 
-type id = `${string}-${string}-${string}-${string}-${string}`;
-type idType = { id: id };
-
-function SongList({ id }: idType) {
+function SongList(props: { id: id }) {
   return (
     <section className="flex flex-col max-h-[90vh] w-full [&>article]:rounded rounded overflow-auto bg-zinc-900">
       <Header />

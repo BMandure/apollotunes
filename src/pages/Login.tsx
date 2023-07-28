@@ -1,29 +1,26 @@
+import { Link, Routes } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import spotifyLogo from "../assets/Spotify_Logo_RGB_Green.png";
+import LoginModal from "../components/LoginModal";
+import RegisterModal from "../components/RegisterModal";
 
 function Login() {
-  const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=f1f6160f46fd4c7b9409ebf3819b9bb7&response_type=code&redirect_uri=${
-    import.meta.env.VITE_APP_URL
-  }`;
   return (
     <main className="text-white border-8 border-main w-[50%] mx-auto translate-y-32 h-[70%] flex flex-col justify-center items-center gap-5">
-      <section className="flex flex-col [&>article]:flex [&>article]:gap-2 [&>article]:items-center">
+      <section className="flex flex-col [&>article]:flex [&>article]:gap-2 [&>article]:items-center [&>article]:justify-center gap-5">
         <article>
           <img
             src={logo}
             alt="apollotunes_logo"
-            className="w-[50px] h-[50px]"
+            className="w-[70px] h-[70px]"
           />
-          <span className="text-3xl">APOLLOTUNES</span>
+          <span className="text-[3rem]">APOLLOTUNES</span>
         </article>
-        <article className="pt-5 justify-center">
-          A <img src={spotifyLogo} alt="spotify_logo" className="h-[30px]" />{" "}
-          clone
+        <article className="h-[15vh] flex items-center gap-8">
+          <LoginModal />
+          <p className="text-main">Or</p>
+          <RegisterModal />
         </article>
       </section>
-      <button className="bg-main px-3 py-2 rounded-3xl text-lg">
-        Login with Spotify
-      </button>
     </main>
   );
 }

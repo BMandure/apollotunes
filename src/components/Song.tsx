@@ -27,7 +27,7 @@ function Song() {
           title="Add to favourites"
           color="gray"
         >
-          <i className="bi bi-heart"></i>
+          <i className="bi bi-heart hover:cursor-pointer"></i>
         </Tooltip>
         4:20
       </td>
