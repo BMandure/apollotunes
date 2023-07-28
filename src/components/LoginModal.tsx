@@ -20,6 +20,7 @@ function LoginModal() {
         action={() => {
           handleShowModal();
         }}
+        closeButton={false}
       />
 
       {showModal && (
