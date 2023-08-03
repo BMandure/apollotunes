@@ -1,4 +1,3 @@
-import { Link, Routes } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import LoginModal from "../components/LoginModal";
 import RegisterModal from "../components/RegisterModal";

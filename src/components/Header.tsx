@@ -1,8 +1,9 @@
 import test from "../assets/add.svg";
+import { Playlist } from "../types";
 
-function Header() {
+function Header(props: { info: Playlist }) {
   return (
-    <article className="m-0 px-[5rem] py-5 flex flex-col text-white bg-gradient-to-b from-[#64bd9f] from-40% to-zinc-900 to-100% ">
+    <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-[#64bd9f] from-40% to-zinc-900 to-100%">
       <div className="h-[40px] min-w-[40px] mb-2 ms-auto flex">
         <button className="flex hover:bg-zinc-700 text-sm rounded-3xl bg-zinc-800 ps-3 pe-1 py-1 items-center gap-5">
           <p>Username</p>
@@ -10,38 +11,39 @@ function Header() {
         </button>
       </div>
 
-      <div className="flex max-[1080px]:flex-col max-[1080px]:items-center">
-        <div className="bg-main rounded-lg !w-[250px] !h-[250px]">
-          <img src={test} alt="album/artist_image" />
+      <div className="flex h-[200px] max-[1080px]:flex-col max-[1080px]:items-center">
+        <div className="bg-zinc-800 rounded-lg w-[200px] h-[200px] p-1">
+          <img
+            src={test}
+            alt="album/artist_image"
+            className="border-2 rounded-lg"
+          />
         </div>
-        <div className="flex flex-col justify-between items-start p-5 gap-3 [&]:font-semibold text-white [&>h2]:max-[1080px]:text-center [&>h2]:max-[1080px]:w-full [&>span]:max-[1080px]:text-center [&>span]:max-[1080px]:w-full [&>button]:max-[1080px]:text-center [&>button]:max-[1080px]:mx-auto [&>small]:max-[1080px]:text-center [&>small]:max-[1080px]:w-full">
-          <small className="text-[1rem]">Category test</small>
-          <h2 className="max-[1080px]:text-[2rem] text-[3rem] min-[1275px]:text-[4rem] leading-tight">
-            Test list name
-          </h2>
 
+        <div className="h-[200px] flex flex-col gap-2 text-start ps-5 justify-center">
+          <small className="font-semibold">{props.info.list}</small>
+          <h2 className="text-[4rem] font-extrabold">{`${props.info.plName}`}</h2>
           <span className="text-left flex gap-3 items-center">
-            <img src={test} alt="" className="h-8" />
-            <p>Username / Artist &#x2022; 935 songs</p>
+            <img src={test} alt="user_profile_img" className="h-8" />
+            <p>
+              {`${props.info.username}`} &#x2022;{" "}
+              {`${props.info.songs.length} songs`}
+            </p>
           </span>
-          <button
-            id="play"
-            className="w-[70px] h-[70px] border-transparent hover:border-2 hover:border-white rounded-[50%]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-play-circle w-full h-full"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-              <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
-            </svg>
-          </button>
         </div>
       </div>
+      <button className="w-[60px] h-[60px] hover:scale-110 my-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="full"
+          height="full"
+          fill="currentColor"
+          className="bi bi-play-circle-fill"
+          viewBox="0 0 16 16"
+        >
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+        </svg>
+      </button>
     </article>
   );
 }

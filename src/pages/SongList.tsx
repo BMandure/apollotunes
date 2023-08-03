@@ -1,11 +1,31 @@
 import Header from "../components/Header";
 import Song from "../components/Song";
-import { id } from "../../types";
+import { Playlist } from "../types";
 
-function SongList(props: { id: id }) {
+function SongList() {
+  const playList: Playlist = {
+    plName: "Album Name Default",
+    username: "Bruno Manduré",
+    songs: [],
+    image: "...",
+    list: "ab",
+  };
+
+  let i: number = 0;
+  while (i < 50) {
+    playList.songs.push({
+      songName: "Song Name Default",
+      username: "Bruno",
+      artist: "Bruno",
+      duration: 4.53,
+      playlist: playList,
+    });
+    i++;
+  }
+
   return (
     <section className="flex flex-col max-h-[90vh] w-full [&>article]:rounded rounded overflow-auto bg-zinc-900">
-      <Header />
+      <Header info={playList} />
       <article className="flex-1 text-white pb-[2rem] pt-0 backdrop-blur-3xl">
         <table className="w-[95%] mx-auto">
           <thead className="sticky top-0 h-[50px] flex items-center border-b-2 border-zinc-800 bg-zinc-900">
@@ -17,35 +37,10 @@ function SongList(props: { id: id }) {
               <th className="w-1/6 !text-end">Duration</th>
             </tr>
           </thead>
-          <tbody className="px-[5rem]">
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
-            <Song />
+          <tbody>
+            {playList.songs.map((song, i) => (
+              <Song key={i} infoSong={song} position={i + 1} />
+            ))}
           </tbody>
         </table>
       </article>
