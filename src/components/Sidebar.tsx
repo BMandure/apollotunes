@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { Tooltip } from "antd";
 
-import searchImg from "../assets/search.svg";
 import homeImg from "../assets/home.svg";
 import libraryImg from "../assets/library.svg";
 import addImg from "../assets/add.svg";
 import logo from "../assets/logo.svg";
 import LibraryList from "./LibraryList";
+import SearchBar from "./SearchBar";
 
 function Sidebar() {
+  const handleSearch = () => {};
+
   return (
     <section className="flex flex-col gap-3 min-w-[70px] max-[920px]:w-[100px] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg">
       <article className="flex flex-col max-h-[30%]">
@@ -31,17 +33,7 @@ function Sidebar() {
             </Link>
           </li>
           <li>
-            <Link
-              to="#"
-              className="flex gap-2 w-full max-[920px]:justify-center"
-            >
-              <img
-                src={searchImg}
-                alt="search_icon"
-                className="w-[30px] h-[30px]"
-              />
-              <span className="max-[920px]:hidden">Search</span>
-            </Link>
+            <SearchBar handleSearch={handleSearch} />
           </li>
         </ul>
       </article>

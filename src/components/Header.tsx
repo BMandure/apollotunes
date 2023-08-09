@@ -2,6 +2,19 @@ import test from "../assets/add.svg";
 import { Playlist } from "../types";
 
 function Header(props: { info: Playlist }) {
+  let listTitle: string = "";
+  switch (props.info.list) {
+    case "ab":
+      listTitle = "Album";
+      break;
+    case "pl":
+      listTitle = "Playlist";
+      break;
+    case "sg":
+      listTitle = "Single";
+      break;
+  }
+
   return (
     <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-[#64bd9f] from-40% to-zinc-900 to-100%">
       <div className="h-[40px] min-w-[40px] mb-2 ms-auto flex">
@@ -21,7 +34,7 @@ function Header(props: { info: Playlist }) {
         </div>
 
         <div className="h-[200px] flex flex-col gap-2 text-start ps-5 justify-center">
-          <small className="font-semibold">{props.info.list}</small>
+          <p className="font-semibold text-lg">{listTitle}</p>
           <h2 className="text-[4rem] font-extrabold">{`${props.info.plName}`}</h2>
           <span className="text-left flex gap-3 items-center">
             <img src={test} alt="user_profile_img" className="h-8" />
