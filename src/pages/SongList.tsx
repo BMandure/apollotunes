@@ -1,8 +1,8 @@
 import Header from "../components/Header";
 import Song from "../components/Song";
-import { Playlist } from "../types";
+import { Id, Playlist } from "../types";
 
-function SongList() {
+function SongList(props: { id: Id }) {
   const playList: Playlist = {
     plName: "Album Name Default",
     username: "Bruno Manduré",
@@ -15,8 +15,11 @@ function SongList() {
   while (i < 50) {
     playList.songs.push({
       songName: "Song Name Default",
-      username: "Bruno",
-      artist: "Bruno",
+      artist: {
+        name: "Bruno",
+        lastname: "Manduré",
+        songs: [],
+      },
       duration: 4.53,
       playlist: playList,
     });

@@ -45,9 +45,7 @@ function Player() {
       <div className="flex flex-grow gap-5 items-center basis-0">
         <img src="..." alt="Album_Img" className="h-[70px] w-[70px] bg-main" />
         <div className="text-left flex flex-col">
-          <Link to="#" className="hover:underline font-bold text-sm">
-            SongName
-          </Link>
+          <p className="pb-[0.2rem]">SongName</p>
           <Link to="#" className="hover:underline text-xs">
             Artists
           </Link>

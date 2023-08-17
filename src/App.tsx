@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import SongList from "./pages/SongList";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -11,7 +12,11 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/" element={<Dashboard />}>
-          <Route path="/" element={<SongList id={crypto.randomUUID()} />} />
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/artist/:id"
+            element={<SongList id={crypto.randomUUID()} />}
+          />
         </Route>
       </Routes>
     </main>

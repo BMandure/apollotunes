@@ -2,10 +2,15 @@ export type Id = `${string}-${string}-${string}-${string}-${string}`;
 
 type ListType = "pl" | "ab" | "sg";
 
+export type ArtistType = {
+  name: string;
+  lastname: string;
+  songs: Song[];
+};
+
 export type Song = {
   songName: string;
-  username: string;
-  artist: string;
+  artist: ArtistType;
   duration: number;
   playlist: Playlist;
   dateAdded?: Date;
