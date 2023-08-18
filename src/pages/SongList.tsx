@@ -1,8 +1,8 @@
 import Header from "../components/Header";
 import Song from "../components/Song";
-import { Id, Playlist } from "../types";
+import { Playlist } from "../types";
 
-function SongList(props: { id: Id }) {
+function SongList() {
   const playList: Playlist = {
     plName: "Album Name Default",
     username: "Bruno Manduré",

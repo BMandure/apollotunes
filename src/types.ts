@@ -5,6 +5,7 @@ type ListType = "pl" | "ab" | "sg";
 export type ArtistType = {
   name: string;
   lastname: string;
+  image: string;
   songs: Song[];
 };
 
