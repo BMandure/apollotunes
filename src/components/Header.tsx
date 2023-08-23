@@ -1,6 +1,7 @@
 import { Tooltip } from "antd";
 import test from "../assets/add.svg";
 import { Playlist } from "../types";
+import UserOptions from "./UserOptions";
 
 function Header(props: { info: Playlist }) {
   let listTitle: string = "";
@@ -17,20 +18,8 @@ function Header(props: { info: Playlist }) {
   }
 
   return (
-    <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-[#64bd9f] from-40% to-zinc-900 to-100%">
-      <div className="h-[40px] min-w-[40px] mb-2 ms-auto flex">
-        <Tooltip
-          placement="bottom"
-          title="Go to profile"
-          color="gray"
-          arrow={false}
-        >
-          <button className="flex hover:bg-zinc-700 text-sm rounded-3xl bg-zinc-800 ps-3 pe-1 py-1 items-center gap-5">
-            <p>Username</p>
-            <img className="w-[30px] h-[30px]" src={test} alt="search_icon" />
-          </button>
-        </Tooltip>
-      </div>
+    <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-main from-40% to-zinc-900 to-100%">
+      <UserOptions />
 
       <div className="flex h-[200px] max-[1080px]:flex-col max-[1080px]:items-center">
         <div className="bg-zinc-800 rounded-lg w-[200px] h-[200px] p-1">

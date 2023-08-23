@@ -84,7 +84,7 @@ function Player() {
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="rgba(100, 189, 159)"
+                  fill="rgba(1, 87, 6, 0.5)"
                   className="bi bi-shuffle"
                   viewBox="0 0 16 16"
                 >
@@ -198,7 +198,7 @@ function Player() {
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="rgba(100, 189, 159)"
+                  fill="rgba(1, 87, 6, 0.5)"
                   className="bi bi-repeat-1"
                   viewBox="0 0 16 16"
                 >
@@ -219,7 +219,7 @@ function Player() {
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="rgba(100, 189, 159)"
+                  fill="rgba(1, 87, 6, 0.5)"
                   className="bi bi-repeat"
                   viewBox="0 0 16 16"
                 >
@@ -251,12 +251,7 @@ function Player() {
         </div>
         <div className="flex gap-2">
           <small>4:50</small>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            className="accent-[#64bd9f] w-80"
-          />
+          <input type="range" min="0" max="100" className="accent-main w-80" />
           <small>4:50</small>
         </div>
       </div>
@@ -267,7 +262,7 @@ function Player() {
           </button>
         </Tooltip>
         <Tooltip placement="top" title="Volume: 20" color="gray" arrow={false}>
-          <input type="range" min="0" max="100" className="accent-[#64bd9f]" />
+          <input type="range" min="0" max="100" className="accent-main" />
         </Tooltip>
       </div>
     </div>

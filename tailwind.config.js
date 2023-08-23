@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        main: "rgba(100, 189, 159)",
-        "main-transparent": "rgba(100, 189, 159, 0.5)",
+        main: "rgb(1, 87, 6)",
+        "main-transparent": "rgba(1, 87, 6, 0.5))",
       },
     },
   },
