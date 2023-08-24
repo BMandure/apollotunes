@@ -4,13 +4,13 @@ import { Outlet } from "react-router-dom";
 
 function Dashboard() {
   return (
-    <>
-      <div className="flex gap-3 !max-h-[89vh]">
+    <div className="h-full flex flex-col justify-around">
+      <div className="flex gap-3 h-[85vh]">
         <Sidebar />
         <Outlet />
       </div>
       <Player />
-    </>
+    </div>
   );
 }
 

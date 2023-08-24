@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         main: "rgb(1, 87, 6)",
-        "main-transparent": "rgba(1, 87, 6, 0.5))",
+        mainTransparent: "rgba(1, 120, 80, 0.5)",
       },
     },
   },

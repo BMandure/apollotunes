@@ -18,7 +18,7 @@ function Header(props: { info: Playlist }) {
   }
 
   return (
-    <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-main from-40% to-zinc-900 to-100%">
+    <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-mainTransparent from-40% to-zinc-900 to-100%">
       <UserOptions />
 
       <div className="flex h-[200px] max-[1080px]:flex-col max-[1080px]:items-center">

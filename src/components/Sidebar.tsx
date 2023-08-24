@@ -12,8 +12,8 @@ function Sidebar() {
   const handleSearch = () => {};
 
   return (
-    <section className="flex flex-col gap-3 min-w-[70px] max-[920px]:w-[100px] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg">
-      <article className="flex flex-col max-h-[30%]">
+    <section className="flex flex-col gap-3 min-w-[70px] max-[920px]:w-[100px] [&>article]:bg-zinc-900 [&>article]:gap-1 [&>article]:rounded-lg h-full">
+      <article className="flex flex-col h-[20%]">
         <ul className="text-start [&>li]:flex [&>li]:gap-2 [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
           <li className="pointer-events-none max-[920px]:flex max-[920px]:justify-center">
             <img src={logo} alt="" className="w-[30px] h-[30px]" />
@@ -38,7 +38,7 @@ function Sidebar() {
         </ul>
       </article>
 
-      <article className="flex flex-col flex-grow h-full">
+      <article className="flex flex-col flex-grow h-[70%]">
         <ul className="text-start [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
           <li className="flex justify-between [&>div]:flex max-[920px]:justify-center">
             <div className="flex gap-2 max-[920px]:justify-center">

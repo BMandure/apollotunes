@@ -1,4 +1,3 @@
-import logo from "../assets/sound.svg";
 import { ArtistType, Playlist } from "../types";
 
 function MusicCard(props: {
@@ -6,18 +5,15 @@ function MusicCard(props: {
   infoPlaylist?: Playlist;
 }) {
   return (
-    <article className="min-w-[220px] min-h-[220px] flex justify-center items-center flex-col rounded-xl bg-zinc-900 hover:cursor-pointer hover:bg-zinc-800">
-      <div className="w-full h-[220px] p-4 relative">
-        <img
-          src={
-            props.infoArtist
-              ? props.infoArtist.image
-              : props.infoPlaylist?.image
-          }
-          alt={props.infoArtist ? "cover_artist" : "cover_playlist"}
-        />
-      </div>
-      <div className="text-start w-full p-4 flex justify-between items-center">
+    <article className="min-w-[220px] h-auto flex justify-center items-center flex-col rounded-xl bg-zinc-900 hover:cursor-pointer hover:bg-zinc-800">
+      <img
+        src={
+          props.infoArtist ? props.infoArtist.image : props.infoPlaylist?.image
+        }
+        alt={props.infoArtist ? "cover_artist" : "cover_playlist"}
+        className="w-full h-[220px] object-cover p-4"
+      />
+      <div className="text-start w-full p-4 pt-0 flex justify-between items-center">
         <div className="h-[3rem] w-full flex flex-col justify-center">
           <p className="font-bold text-lg">
             {props.infoArtist?.name} {props.infoArtist?.lastname}{" "}

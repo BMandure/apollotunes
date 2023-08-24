@@ -17,6 +17,10 @@ function App() {
             path="/artist/:id"
             element={<SongList id={crypto.randomUUID()} />}
           />
+          <Route
+            path="/playlist/:id"
+            element={<SongList id={crypto.randomUUID()} />}
+          />
         </Route>
       </Routes>
     </main>

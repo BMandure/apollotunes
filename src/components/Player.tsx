@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import sound from "../assets/sound.svg";
+import songImg from "../assets/portraitAlbum_Playlist.jpg";
 
 type Repeat = "y" | "n" | "one";
 const repeatTypes: Repeat[] = ["y", "n", "one"];
@@ -41,9 +42,9 @@ function Player() {
   };
 
   return (
-    <div className="text-white flex w-full justify-between px-2 pt-3 items-center basis-0">
+    <div className="text-white flex w-full justify-between items-center basis-0">
       <div className="flex flex-grow gap-5 items-center basis-0">
-        <img src="..." alt="Album_Img" className="h-[70px] w-[70px] bg-main" />
+        <img src={songImg} alt="Song_Img" className="h-[70px] w-[70px]" />
         <div className="text-left flex flex-col">
           <p className="pb-[0.2rem]">SongName</p>
           <Link to="#" className="hover:underline text-xs">
@@ -70,7 +71,7 @@ function Player() {
           </button>
         </Tooltip>
       </div>
-      <div className="flex flex-col h-full items-center gap-2">
+      <div className="flex flex-col h-full items-center justify-between gap-2">
         <div className="flex gap-5 [&>button]:h-[22px] [&>button]:w-[22px] [&>button>svg]:h-full [&>button>svg]:w-full items-center">
           {shuffle ? (
             <Tooltip

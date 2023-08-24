@@ -1,13 +1,15 @@
 import Header from "../components/Header";
 import Song from "../components/Song";
-import { Playlist } from "../types";
+import { Id, Playlist } from "../types";
+import artistImg from "../assets/portraitArtist.jpg";
+import playlistImg from "../assets/portraitAlbum_Playlist.jpg";
 
-function SongList() {
+function SongList(props: { id: Id }) {
   const playList: Playlist = {
     plName: "Album Name Default",
     username: "Bruno Manduré",
     songs: [],
-    image: "...",
+    image: artistImg,
     list: "ab",
   };
 
@@ -18,6 +20,7 @@ function SongList() {
       artist: {
         name: "Bruno",
         lastname: "Manduré",
+        image: playlistImg,
         songs: [],
       },
       duration: 4.53,
