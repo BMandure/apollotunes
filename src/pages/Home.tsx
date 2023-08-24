@@ -25,7 +25,7 @@ function Home() {
     songs: [],
   };
   return (
-    <main className="text-white text-start w-full max-h-[87vh] overflow-auto m-auto flex flex-col gap-5 py-2 px-4">
+    <main className="text-white text-start w-full max-h-[85vh] overflow-auto m-auto flex flex-col gap-5 py-2 px-4">
       <div className="flex w-full">
         <p className="text-3xl">
           WELCOME to <span className="text-main">Apollotune</span>!
