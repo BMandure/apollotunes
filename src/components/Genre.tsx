@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Genre(props: { name: string; img: string }) {
   return (
-    <div className="h-[100px] w-[350px] rounded-lg flex box-border bg-zinc-900 items-center hover:cursor-pointer hover:bg-zinc-800 justify-between">
+    <Link
+      to={`/genre/${props.name}`}
+      className="h-[100px] w-[350px] rounded-lg flex box-border bg-zinc-900 items-center hover:cursor-pointer hover:bg-zinc-800 justify-between"
+    >
       <div className="h-[100px] flex items-center gap-[20px]">
         <img
           src={props.img}
@@ -9,7 +14,7 @@ function Genre(props: { name: string; img: string }) {
         />
         <p className="text-xl font-bold">{props.name}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

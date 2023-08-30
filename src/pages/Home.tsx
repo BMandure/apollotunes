@@ -34,7 +34,7 @@ function Home() {
       </div>
       <p className="text-xl">Search by Genres:</p>
       <div className="w-full flex justify-between">
-        <Genre name="LoFi" img={lofi} />
+        <Genre name="Lo-Fi" img={lofi} />
         <Genre name="Pop" img={pop} />
         <Genre name="Rock" img={rock} />
         <Genre name="K-Pop" img={kpop} />

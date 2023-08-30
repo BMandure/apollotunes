@@ -15,11 +15,51 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/artist/:id"
-            element={<SongList id={crypto.randomUUID()} />}
+            element={<SongList id={crypto.randomUUID()} isGenre={false} />}
           />
           <Route
             path="/playlist/:id"
-            element={<SongList id={crypto.randomUUID()} />}
+            element={<SongList id={crypto.randomUUID()} isGenre={false} />}
+          />
+          <Route
+            path={`/genre/Lo-Fi`}
+            element={
+              <SongList
+                id={crypto.randomUUID()}
+                isGenre={true}
+                genreName="Lo-Fi"
+              />
+            }
+          />
+          <Route
+            path={`/genre/Pop`}
+            element={
+              <SongList
+                id={crypto.randomUUID()}
+                isGenre={true}
+                genreName="Pop"
+              />
+            }
+          />
+          <Route
+            path={`/genre/Rock`}
+            element={
+              <SongList
+                id={crypto.randomUUID()}
+                isGenre={true}
+                genreName="Rock"
+              />
+            }
+          />
+          <Route
+            path={`/genre/K-Pop`}
+            element={
+              <SongList
+                id={crypto.randomUUID()}
+                isGenre={true}
+                genreName="K-Pop"
+              />
+            }
           />
         </Route>
       </Routes>

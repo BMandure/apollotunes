@@ -4,7 +4,11 @@ import { Id, Playlist } from "../types";
 import artistImg from "../assets/portraitArtist.jpg";
 import playlistImg from "../assets/portraitAlbum_Playlist.jpg";
 
-function SongList(props: { id: Id }) {
+function SongList(props: {
+  id: Id;
+  isGenre: boolean;
+  genreName?: string | null;
+}) {
   const playList: Playlist = {
     plName: "Album Name Default",
     username: "Bruno Manduré",
@@ -31,7 +35,11 @@ function SongList(props: { id: Id }) {
 
   return (
     <section className="flex flex-col max-h-[90vh] w-full [&>article]:rounded rounded overflow-auto bg-zinc-900">
-      <Header info={playList} />
+      {props.isGenre ? (
+        props.genreName && <Header genreName={props.genreName} />
+      ) : (
+        <Header infoPlaylist={playList} />
+      )}
       <article className="flex-1 text-white pb-[2rem] pt-0 backdrop-blur-3xl">
         <table className="w-[95%] mx-auto">
           <thead className="sticky top-0 h-[50px] flex items-center border-b-2 border-zinc-800 bg-zinc-900">

@@ -1,11 +1,10 @@
-import { Tooltip } from "antd";
 import test from "../assets/add.svg";
 import { Playlist } from "../types";
 import UserOptions from "./UserOptions";
 
-function Header(props: { info: Playlist }) {
+function Header(props: { infoPlaylist?: Playlist; genreName?: String }) {
   let listTitle: string = "";
-  switch (props.info.list) {
+  switch (props.infoPlaylist?.list) {
     case "ab":
       listTitle = "Album";
       break;
@@ -32,12 +31,16 @@ function Header(props: { info: Playlist }) {
 
         <div className="h-[200px] flex flex-col gap-2 text-start ps-5 justify-center">
           <p className="font-semibold text-lg">{listTitle}</p>
-          <h2 className="text-[4rem] font-extrabold">{`${props.info.plName}`}</h2>
+          <h2 className="text-[4rem] font-extrabold">
+            {props.genreName
+              ? `${props.genreName}`
+              : `${props.infoPlaylist?.plName}`}
+          </h2>
           <span className="text-left flex gap-3 items-center">
             <img src={test} alt="user_profile_img" className="h-8" />
             <p>
-              {`${props.info.username}`} &#x2022;{" "}
-              {`${props.info.songs.length} songs`}
+              {`${props.infoPlaylist?.username}`} &#x2022;{" "}
+              {`${props.infoPlaylist?.songs.length} songs`}
             </p>
           </span>
         </div>
