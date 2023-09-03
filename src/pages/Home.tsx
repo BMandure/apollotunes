@@ -1,17 +1,22 @@
 import MusicCard from "../components/MusicCard";
 import { ArtistType, Playlist } from "../types";
+import { format } from "date-fns";
+
 import artistImg from "../assets/portraitArtist.jpg";
 import albumPlaylistImg from "../assets/portraitAlbum_Playlist.jpg";
 import UserOptions from "../components/UserOptions";
 import Genre from "../components/Genre";
+import SectionHeader from "../components/SectionHeader";
 
 import kpop from "../assets/genres/kpopGenre.jpg";
 import lofi from "../assets/genres/lofiGenre.jpg";
 import pop from "../assets/genres/popGenre.jpg";
 import rock from "../assets/genres/rockGenre.jpg";
-import SectionHeader from "../components/SectionHeader";
 
 function Home() {
+  {
+    /*TODO: Add message "Good Morning", "Afternoon" or "Night"*/
+  }
   const artistTest: ArtistType = {
     name: "Artist",
     lastname: "Name",
@@ -29,7 +34,7 @@ function Home() {
     <main className="text-white text-start w-full max-h-[85vh] overflow-auto m-auto flex flex-col gap-5 py-2 px-4">
       <div className="flex w-full">
         <p className="text-3xl">
-          WELCOME to <span className="text-main">Apollotune</span>!
+          WELCOME, <span className="text-main">GOOD MORNING</span>!
         </p>
         <UserOptions />
       </div>
@@ -62,7 +67,7 @@ function Home() {
         </section>
       </div>{" "}
       <div id="playlists">
-        <p className="text-xl">Playlists:</p>
+        <SectionHeader link="..." title="Playlists" />
         <section className="flex gap-5 overflow-auto py-5">
           <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
           <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />

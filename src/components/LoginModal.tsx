@@ -2,15 +2,21 @@ import { useState } from "react";
 import Button from "./Button";
 
 import logo from "../assets/logo.svg";
+import { useNavigate } from "react-router-dom";
 
 function LoginModal() {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleShowModal = () => {
     setShowModal(true);
   };
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+  const handleLink = () => {
+    alert("Add authenticator with JWS");
+    navigate("/");
   };
 
   return (
@@ -50,7 +56,7 @@ function LoginModal() {
               <Button
                 text="Login"
                 action={() => {
-                  console.log("Login");
+                  handleLink();
                 }}
                 closeButton={false}
               />
