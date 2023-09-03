@@ -39,8 +39,8 @@ function Sidebar() {
       </article>
 
       <article className="flex flex-col flex-grow h-[70%]">
-        <ul className="text-start [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
-          <li className="flex justify-between [&>div]:flex max-[920px]:justify-center">
+        <ul className="text-start [&>li]:text-white [&>li]:text-xl gap-5">
+          <li className="flex justify-between [&>div]:flex max-[920px]:justify-center p-3">
             <div className="flex gap-2 max-[920px]:justify-center">
               <img
                 className="w-[30px] h-[30px]"
@@ -66,7 +66,7 @@ function Sidebar() {
               </Tooltip>
             </div>
           </li>
-          <li className="max-[920px]:hidden [&>button]:text-sm [&>button]:rounded-2xl [&>button]:bg-zinc-800 [&>button]:px-5 [&>button]:py-1 flex gap-2">
+          <li className="mx-4 px-0 py-2 overflow-auto max-[920px]:hidden [&>button]:text-sm [&>button]:rounded-2xl [&>button]:bg-zinc-800 [&>button]:px-5 [&>button]:py-1 flex gap-2">
             <button className="hover:bg-zinc-700">Playlists</button>
             <button className="hover:bg-zinc-700">Artists</button>
             <button className="hover:bg-zinc-700">Albums</button>

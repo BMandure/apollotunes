@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
 import { ArtistType, Playlist } from "../types";
 
 function MusicCard(props: {
   infoArtist?: ArtistType;
   infoPlaylist?: Playlist;
+  link: string;
 }) {
   return (
-    <article className="min-w-[220px] h-auto flex justify-center items-center flex-col rounded-xl bg-zinc-900 hover:cursor-pointer hover:bg-zinc-800">
+    <Link
+      to={props.link}
+      className="min-w-[220px] h-auto flex justify-center items-center flex-col rounded-xl bg-zinc-900 hover:bg-zinc-800"
+    >
       <img
         src={
           props.infoArtist ? props.infoArtist.image : props.infoPlaylist?.image
@@ -22,7 +27,7 @@ function MusicCard(props: {
           {props.infoPlaylist && <p>{props.infoPlaylist?.username}</p>}
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 

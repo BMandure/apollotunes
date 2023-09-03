@@ -9,6 +9,7 @@ import kpop from "../assets/genres/kpopGenre.jpg";
 import lofi from "../assets/genres/lofiGenre.jpg";
 import pop from "../assets/genres/popGenre.jpg";
 import rock from "../assets/genres/rockGenre.jpg";
+import SectionHeader from "../components/SectionHeader";
 
 function Home() {
   const artistTest: ArtistType = {
@@ -32,71 +33,52 @@ function Home() {
         </p>
         <UserOptions />
       </div>
-      <p className="text-xl">Search by Genres:</p>
+      <SectionHeader link="..." title="Genres" />
       <div className="w-full flex justify-between">
         <Genre name="Lo-Fi" img={lofi} />
         <Genre name="Pop" img={pop} />
         <Genre name="Rock" img={rock} />
         <Genre name="K-Pop" img={kpop} />
       </div>
-      <div id="my-playlists">
-        <p className="text-xl">My Playlists:</p>
-        <section className="flex gap-5 overflow-auto py-5">
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-        </section>
-      </div>
       <div id="artist-list">
-        <p className="text-xl">Artists:</p>
+        <SectionHeader link="..." title="Artists" />
         <section className="flex gap-5 overflow-auto py-5">
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
-          <MusicCard infoArtist={artistTest} />
+          {/*TODO: create component: "ArtistCard"*/}
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <MusicCard infoArtist={artistTest} link="/artist/:id" />
         </section>
       </div>{" "}
       <div id="playlists">
         <p className="text-xl">Playlists:</p>
         <section className="flex gap-5 overflow-auto py-5">
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
-          <MusicCard infoPlaylist={playlistTest} />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
+          <MusicCard infoPlaylist={playlistTest} link="/playlist/:id" />
         </section>
       </div>
     </main>

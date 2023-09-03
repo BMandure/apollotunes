@@ -17,32 +17,35 @@ function Header(props: { infoPlaylist?: Playlist; genreName?: String }) {
   }
 
   return (
-    <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-mainTransparent from-40% to-zinc-900 to-100%">
+    <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-mainTransparent from-10% to-zinc-900 to-100%">
       <UserOptions />
 
       <div className="flex h-[200px] max-[1080px]:flex-col max-[1080px]:items-center">
         <div className="bg-zinc-800 rounded-lg w-[200px] h-[200px] p-1">
           <img
             src={test}
-            alt="album/artist_image"
+            alt="album/playlist_image"
             className="border-2 rounded-lg"
           />
         </div>
 
         <div className="h-[200px] flex flex-col gap-2 text-start ps-5 justify-center">
           <p className="font-semibold text-lg">{listTitle}</p>
+
           <h2 className="text-[4rem] font-extrabold">
             {props.genreName
               ? `${props.genreName}`
               : `${props.infoPlaylist?.plName}`}
           </h2>
-          <span className="text-left flex gap-3 items-center">
-            <img src={test} alt="user_profile_img" className="h-8" />
-            <p>
-              {`${props.infoPlaylist?.username}`} &#x2022;{" "}
-              {`${props.infoPlaylist?.songs.length} songs`}
-            </p>
-          </span>
+          {!props.genreName && (
+            <span className="text-left flex gap-3 items-center">
+              <img src={test} alt="user_profile_img" className="h-8" />
+              <p>
+                {`${props.infoPlaylist?.username}`} &#x2022;{" "}
+                {`${props.infoPlaylist?.songs.length} songs`}
+              </p>
+            </span>
+          )}
         </div>
       </div>
       <button className="w-[60px] h-[60px] hover:scale-110 my-5">
