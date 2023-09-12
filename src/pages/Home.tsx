@@ -1,6 +1,5 @@
-import MusicCard from "../components/MusicCard";
+import ArtistCard from "../components/ArtistCard";
 import { ArtistType, Playlist } from "../types";
-import { format } from "date-fns";
 
 import artistImg from "../assets/portraitArtist.jpg";
 import albumPlaylistImg from "../assets/portraitAlbum_Playlist.jpg";
@@ -12,6 +11,7 @@ import kpop from "../assets/genres/kpopGenre.jpg";
 import lofi from "../assets/genres/lofiGenre.jpg";
 import pop from "../assets/genres/popGenre.jpg";
 import rock from "../assets/genres/rockGenre.jpg";
+import MusicCard from "../components/MusicCard";
 
 function Home() {
   {
@@ -39,7 +39,7 @@ function Home() {
         <UserOptions />
       </div>
       <SectionHeader link="..." title="Genres" />
-      <div className="w-full flex justify-between">
+      <div className="w-full justify-start flex flex-wrap gap-5">
         <Genre name="Lo-Fi" img={lofi} />
         <Genre name="Pop" img={pop} />
         <Genre name="Rock" img={rock} />
@@ -49,21 +49,21 @@ function Home() {
         <SectionHeader link="..." title="Artists" />
         <section className="flex gap-5 overflow-auto py-5">
           {/*TODO: create component: "ArtistCard"*/}
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
-          <MusicCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
+          <ArtistCard infoArtist={artistTest} link="/artist/:id" />
         </section>
       </div>{" "}
       <div id="playlists">
