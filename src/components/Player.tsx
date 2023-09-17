@@ -9,9 +9,10 @@ type Repeat = "y" | "n" | "one";
 const repeatTypes: Repeat[] = ["y", "n", "one"];
 
 function Player() {
-  const [playing, setPlaying] = useState<boolean>(false);
+  const [playing, setPlaying] = useState(false);
   const [repeat, setRepeat] = useState<Repeat>(repeatTypes[1]);
-  const [shuffle, setShuffle] = useState<boolean>(false);
+  const [shuffle, setShuffle] = useState(false);
+  const [volume, setVolume] = useState<number>(50);
 
   const handlePlay = (): void => {
     setPlaying(!playing);
@@ -262,8 +263,20 @@ function Player() {
             <img src={sound} alt="sound/mute_Icon" />
           </button>
         </Tooltip>
-        <Tooltip placement="top" title="Volume: 20" color="gray" arrow={false}>
-          <input type="range" min="0" max="100" className="accent-main" />
+        <Tooltip
+          placement="top"
+          title={`Volume: ${volume}`}
+          color="gray"
+          arrow={false}
+        >
+          <input
+            type="range"
+            min="0"
+            max="100"
+            className="accent-main"
+            value={volume}
+            onChange={(event) => setVolume(Number(event.target.value))}
+          />
         </Tooltip>
       </div>
     </div>

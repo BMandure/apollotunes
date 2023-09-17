@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import test from "../assets/add.svg";
 import { Playlist } from "../types";
 import UserOptions from "./UserOptions";
+import backImg from "../assets/back.svg";
 
 function Header(props: { infoPlaylist?: Playlist; genreName?: String }) {
   let listTitle: string = "";
@@ -18,8 +20,20 @@ function Header(props: { infoPlaylist?: Playlist; genreName?: String }) {
 
   return (
     <article className="m-0 px-10 py-5 flex flex-col text-white bg-gradient-to-b from-mainTransparent from-10% to-zinc-900 to-100%">
-      <UserOptions />
-
+      <div className="flex justify-around">
+        <Link
+          to={"/"}
+          className="flex hover:bg-zinc-700 text-sm rounded-3xl bg-zinc-800 items-center gap-5 px-2 h-[40px]"
+        >
+          <img
+            src={backImg}
+            alt="go-back"
+            className="w-[27px] h-[27px] m-auto"
+          />
+          <p>Back</p>
+        </Link>
+        <UserOptions />
+      </div>
       <div className="flex h-[200px] max-[1080px]:flex-col max-[1080px]:items-center">
         <div className="bg-zinc-800 rounded-lg w-[200px] h-[200px] p-1">
           <img

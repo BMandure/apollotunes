@@ -17,7 +17,7 @@ function Sidebar() {
         <ul className="text-start [&>li]:flex [&>li]:gap-2 [&>li]:text-white [&>li]:text-xl gap-5 [&>li]:p-3">
           <li className="pointer-events-none max-[920px]:flex max-[920px]:justify-center">
             <img src={logo} alt="" className="w-[30px] h-[30px]" />
-            <h1 className="text-2xl max-[920px]:hidden">APOLLOTUNE</h1>
+            <h1 className="text-2xl max-[920px]:hidden">APOLLOTUNES</h1>
           </li>
           <li>
             <Link
