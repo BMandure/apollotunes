@@ -44,7 +44,7 @@ function SongList(props: {
         <table className="w-[95%] mx-auto">
           <thead className="sticky top-0 h-[50px] flex items-center border-b-2 border-zinc-800 bg-zinc-900">
             <tr className="flex gap-5 w-full justify-around [&>th]:text-start">
-              <th className="w-[50px]">#</th>
+              <th className="w-[25px]">#</th>
               <th className="w-[30%]">Title</th>
               <th className="w-1/6 max-[1050px]:hidden">Album</th>
               <th className="w-1/6 max-[1050px]:hidden">Date Added</th>
