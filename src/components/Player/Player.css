@@ -1,0 +1,20 @@
+#seekbar,
+#volume {
+  background-color: var(--main-color);
+}
+#seekbar::-webkit-progress-value,
+#volume::-webkit-progress-value {
+  background-color: var(--main-color);
+}
+#seekbar::-webkit-progress-value:active,
+#volume::-webkit-progress-value:active {
+  border: none;
+}
+#seekbar::-moz-progress-bar,
+#volume::-moz-progress-bar {
+  background-color: var(--main-color);
+}
+#seekbar::-moz-progress-bar:focus #seekbar::-moz-progress-bar:active,
+#volume::-moz-progress-bar:active #volume::-moz-progress-bar:focus {
+  border: none;
+}

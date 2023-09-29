@@ -1,0 +1,26 @@
+.dashboard-container-wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.dashboard-container-one {
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 12;
+}
+.dashboard-container-two {
+  grid-column-start: 3;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 12;
+}
+.dashboard-container-three {
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 12;
+}

@@ -2,8 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import SongList from "./pages/SongList";
-import Home from "./pages/Home";
+import Favourites from "./pages/Favourites";
+import Playlists from "./pages/Playlists";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -13,54 +14,8 @@ function App() {
 
         <Route path="/" element={<Dashboard />}>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/artist/:id"
-            element={<SongList id={crypto.randomUUID()} isGenre={false} />}
-          />
-          <Route
-            path="/playlist/:id"
-            element={<SongList id={crypto.randomUUID()} isGenre={false} />}
-          />
-          <Route
-            path={`/genre/Lo-Fi`}
-            element={
-              <SongList
-                id={crypto.randomUUID()}
-                isGenre={true}
-                genreName="Lo-Fi"
-              />
-            }
-          />
-          <Route
-            path={`/genre/Pop`}
-            element={
-              <SongList
-                id={crypto.randomUUID()}
-                isGenre={true}
-                genreName="Pop"
-              />
-            }
-          />
-          <Route
-            path={`/genre/Rock`}
-            element={
-              <SongList
-                id={crypto.randomUUID()}
-                isGenre={true}
-                genreName="Rock"
-              />
-            }
-          />
-          <Route
-            path={`/genre/K-Pop`}
-            element={
-              <SongList
-                id={crypto.randomUUID()}
-                isGenre={true}
-                genreName="K-Pop"
-              />
-            }
-          />
+          <Route path="favourites" element={<Favourites />} />
+          <Route path="playlists" element={<Playlists />} />
         </Route>
       </Routes>
     </main>

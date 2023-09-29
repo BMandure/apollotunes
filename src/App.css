@@ -4,6 +4,11 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  color: white;
+}
+:root {
+  --main-color: #ecbc55;
+  --secondary-color: #d0be98;
 }
 ::-webkit-scrollbar {
   /* Customize the scrollbar width */

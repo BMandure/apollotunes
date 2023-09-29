@@ -1,25 +1,35 @@
+import { useState } from "react";
 import logo from "../assets/logo.svg";
-import LoginModal from "../components/LoginModal";
-import RegisterModal from "../components/RegisterModal";
+
+import Button from "../components/Button";
+import LoginBox from "../components/Modals/LoginBox";
+import RegisterBox from "../components/Modals/RegisterBox";
 
 function Login() {
+  const [showRegisterBox, setShowRegisterBox] = useState(false);
+  const [showLoginBox, setShowLoginBox] = useState(false);
+
+  const handleOnClickLogin = () => {
+    setShowLoginBox(true);
+  };
+
+  const handleOnClickRegister = () => {
+    setShowRegisterBox(true);
+  };
   return (
-    <main className="text-white border-8 border-main w-[50%] mx-auto translate-y-32 h-[70%] flex flex-col justify-center items-center gap-5">
-      <section className="flex flex-col [&>article]:flex [&>article]:gap-2 [&>article]:items-center [&>article]:justify-center gap-5">
-        <article>
-          <img
-            src={logo}
-            alt="apollotunes_logo"
-            className="w-[70px] h-[70px]"
-          />
-          <span className="text-[3rem]">APOLLOTUNES</span>
+    <main className="h-full flex justify-center items-center">
+      <section className="flex gap-5 flex-col items-center justify-center border border-main w-[50vw] h-[50vh]">
+        <article className="flex justify-center items-center pb-[50px] gap-5">
+          <img src={logo} alt="apollotunes_logo" className="w-[70px]" />
+          <h1 className="text-[3rem]">APOLLOTUNES</h1>
         </article>
-        <article className="h-[15vh] flex items-center gap-8">
-          <LoginModal />
-          <p className="text-main px-6">Or</p>
-          <RegisterModal />
+        <article className="flex gap-5">
+          <Button text="Log in" onClickBeheavor={handleOnClickLogin} />
+          <Button text="Sign in" onClickBeheavor={handleOnClickRegister} />
         </article>
       </section>
+      <LoginBox show={showLoginBox} setShow={setShowLoginBox} />
+      <RegisterBox show={showRegisterBox} setShow={setShowRegisterBox} />
     </main>
   );
 }

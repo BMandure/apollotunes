@@ -1,14 +1,8 @@
-function Button(props: {
-  text: string;
-  action: Function;
-  closeButton: boolean;
-}) {
+function Button(props: { text: string; onClickBeheavor: () => any }) {
   return (
     <button
-      onClick={() => props.action()}
-      className={`w-[150px] px-4 py-3 border-2 ${
-        props.closeButton ? "border-zinc-800" : "border-main"
-      } rounded-3xl hover:bg-main`}
+      className="px-4 py-2 w-[200px] rounded-3xl border border-main hover:text-main hover:bg-zinc-950"
+      onClick={() => props.onClickBeheavor()}
     >
       {props.text}
     </button>
