@@ -58,12 +58,12 @@ function Player(props: {
     }
   };
   return (
-    <div className="h-[90%] w-full flex justify-between px-3">
+    <div className="h-[100%] w-full flex justify-between px-3">
       <div id="songInfo" className="flex items-center gap-3 min-w-[250px]">
         <img
           src={testImg}
           alt="album_thumbnail"
-          className="h-[60px] w-[60px] object-cover rounded-lg"
+          className="h-[70px] w-[70px] object-cover rounded-lg"
         />
         <span className="flex flex-col text-start gap-1">
           <span>{props.currentDataSong.title}</span>

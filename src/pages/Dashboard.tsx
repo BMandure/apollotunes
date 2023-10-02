@@ -52,7 +52,7 @@ function Dashboard() {
       <div className="dashboard-container-two bg-zinc-900 rounded-xl p-3">
         <Outlet />
       </div>
-      <div className="dashboard-container-three bg-zinc-900 rounded-xl flex items-center">
+      <div className="dashboard-container-three flex items-center">
         <audio
           src={currentSong.currentSrc}
           ref={audioElem}
