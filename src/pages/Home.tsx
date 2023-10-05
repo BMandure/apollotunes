@@ -6,6 +6,7 @@ import lofi from "../assets/genres/lofiGenre.jpg";
 import pop from "../assets/genres/popGenre.jpg";
 import rock from "../assets/genres/rockGenre.jpg";
 import PlaylistAlbum from "../components/Cards/PlaylistAlbum";
+import artistImg from "../assets/genres/lofiGenre.jpg";
 
 function Home() {
   return (
@@ -43,13 +44,13 @@ function Home() {
         </div>
         <div className="flex justify-between flex-wrap gap-2">
           {/*TODO: Bootstrap Columns or alternative */}
-          <Artist />
-          <Artist />
-          <Artist />
-          <Artist />
-          <Artist />
-          <Artist />
-          <Artist />
+          <Artist name="Artist 1" img={artistImg} />
+          <Artist name="Artist 2" img={artistImg} />
+          <Artist name="Artist 3" img={artistImg} />
+          <Artist name="Artist 4" img={artistImg} />
+          <Artist name="Artist 5" img={artistImg} />
+          <Artist name="Artist 6" img={artistImg} />
+          <Artist name="Artist 7" img={artistImg} />
         </div>
       </article>
       <article id="artist-home-list" className="py-2">

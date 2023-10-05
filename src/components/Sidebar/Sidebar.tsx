@@ -23,7 +23,7 @@ function Sidebar() {
             redButton={false}
           />
         </li>
-        <li className="flex-grow overflow-y-auto my-3">
+        <li className="flex-grow overflow-y-auto my-3 me-2">
           <SidebarButton
             text="Playlist Name"
             imgSrc={logo}

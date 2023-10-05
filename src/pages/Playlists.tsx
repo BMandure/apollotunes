@@ -10,8 +10,10 @@ function Playlists() {
         plName={state.genreName}
         artistName={state.artist}
         img={state.genreImg}
+        isArtist={state.isArtist}
+        qtySongs={4}
       />
-      <div className="flex flex-col overflow-y-auto">
+      <div className="flex flex-col overflow-y-auto mt-5">
         <SongList />
       </div>
     </section>

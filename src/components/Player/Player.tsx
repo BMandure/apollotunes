@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 import "./Player.css";
 
@@ -19,12 +19,14 @@ function Player(props: {
   setCurrentSong: any;
   currentDataSong: any;
   setCurrentDataSong: any;
+  skipNext: () => void;
+  index: number;
+  setIndex: Dispatch<SetStateAction<number>>;
   //TODO: Change Any type
 }) {
   const clickRef = useRef<HTMLProgressElement>(null);
   const clickVolumeRef = useRef<HTMLProgressElement>(null);
   const [volumeIcon, setVolumeIcon] = useState("bi-volume-up");
-  const [index, setIndex] = useState(0);
   const [volume, setVolume] = useState(0.5);
 
   useEffect(() => {
@@ -77,6 +79,7 @@ function Player(props: {
         </span>
       </div>
       <div id="playerContainer" className="flex flex-col gap-2 pb-3">
+        {props.currentDataSong.duration}
         <div className="flex justify-center px-1 items-center gap-3">
           <PlayerPrevious
             songs={props.songs}
@@ -85,8 +88,8 @@ function Player(props: {
             currentDataSong={props.currentDataSong}
             setCurrentDataSong={props.setCurrentDataSong}
             setIsPlaying={props.setIsPlaying}
-            index={index}
-            setIndex={setIndex}
+            index={props.index}
+            setIndex={props.setIndex}
           />
           <PlayerButton
             isPlaying={props.isPlaying}
@@ -100,8 +103,7 @@ function Player(props: {
             currentDataSong={props.currentDataSong}
             setCurrentDataSong={props.setCurrentDataSong}
             setIsPlaying={props.setIsPlaying}
-            index={index}
-            setIndex={setIndex}
+            skipNext={props.skipNext}
           />
         </div>
         <div className="flex justify-center items-center gap-5">

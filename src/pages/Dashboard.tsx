@@ -28,6 +28,7 @@ function Dashboard() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentDataSong, setCurrentDataSong] = useState(songData1);
   const [currentSong, setCurrentSong] = useState(importedSong1);
+  const [index, setIndex] = useState(0);
 
   const audioElem = useRef<HTMLAudioElement>(null);
 
@@ -47,6 +48,17 @@ function Dashboard() {
       });
     }
   };
+  const skipNext = () => {
+    if (index === songs.length - 1) {
+      setCurrentSong(songs[0].audio);
+      setCurrentDataSong(songs[0].info);
+      setIndex(0);
+    } else {
+      setCurrentSong(songs[index + 1].audio);
+      setCurrentDataSong(songs[index + 1].info);
+      setIndex(index + 1);
+    }
+  };
 
   return (
     <div className="dashboard-container-wrapper">
@@ -62,6 +74,7 @@ function Dashboard() {
           ref={audioElem}
           onTimeUpdate={onPlaying}
           autoPlay
+          onEnded={skipNext}
         />
         <Player
           songs={songs}
@@ -73,6 +86,9 @@ function Dashboard() {
           setCurrentSong={setCurrentSong}
           setCurrentDataSong={setCurrentDataSong}
           currentDataSong={currentDataSong}
+          skipNext={skipNext}
+          index={index}
+          setIndex={setIndex}
         />
       </div>
     </div>

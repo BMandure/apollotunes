@@ -7,7 +7,7 @@ function Genre(props: { name: string; img: string }) {
   return (
     <Link
       to={`/${slug}`}
-      state={{ genreName: props.name, genreImg: props.img }}
+      state={{ genreName: props.name, genreImg: props.img, isArtist: false }}
       className="rounded-xl w-[350px] h-[80px] flex items-center gap-5 bg-customDark hover:bg-zinc-800 group"
     >
       <img
