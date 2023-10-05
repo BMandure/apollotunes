@@ -43,7 +43,6 @@ function Dashboard() {
       });
     }
   };
-
   return (
     <div className="dashboard-container-wrapper">
       <div className="dashboard-container-one bg-zinc-900 rounded-xl">

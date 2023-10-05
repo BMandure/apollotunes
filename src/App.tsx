@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Favourites from "./pages/Favourites";
 import Playlists from "./pages/Playlists";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Dashboard />}>
           <Route path="/" element={<Home />} />
           <Route path="favourites" element={<Favourites />} />
-          <Route path="playlists" element={<Playlists />} />
+          <Route path="/:genreSlug" element={<Playlists />} />
         </Route>
       </Routes>
     </main>

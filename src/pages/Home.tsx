@@ -1,11 +1,11 @@
-import Artist from "./Cards/Artist";
-import Genre from "./Cards/Genre";
+import Artist from "../components/Cards/Artist";
+import Genre from "../components/Cards/Genre";
 
 import kpop from "../assets/genres/kpopGenre.jpg";
 import lofi from "../assets/genres/lofiGenre.jpg";
 import pop from "../assets/genres/popGenre.jpg";
 import rock from "../assets/genres/rockGenre.jpg";
-import PlaylistAlbum from "./Cards/PlaylistAlbum";
+import PlaylistAlbum from "../components/Cards/PlaylistAlbum";
 
 function Home() {
   return (

@@ -1,6 +1,15 @@
+import { Link } from "react-router-dom";
+import slugify from "slugify";
+
 function Genre(props: { name: string; img: string }) {
+  const loweredName = props.name.toLowerCase();
+  const slug = slugify(loweredName);
   return (
-    <button className="rounded-xl w-[350px] h-[80px] flex items-center gap-5 bg-customDark hover:bg-zinc-800 group">
+    <Link
+      to={`/${slug}`}
+      state={{ genreName: props.name, genreImg: props.img }}
+      className="rounded-xl w-[350px] h-[80px] flex items-center gap-5 bg-customDark hover:bg-zinc-800 group"
+    >
       <img
         src={props.img}
         alt="genre_img"
@@ -16,7 +25,7 @@ function Genre(props: { name: string; img: string }) {
           ></i>
         </span>
       </div>
-    </button>
+    </Link>
   );
 }
 
