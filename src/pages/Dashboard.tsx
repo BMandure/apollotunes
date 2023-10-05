@@ -43,6 +43,7 @@ function Dashboard() {
       setCurrentSong({
         ...currentSong,
         progress: (currentTime / duration) * 100,
+        length: duration,
       });
     }
   };

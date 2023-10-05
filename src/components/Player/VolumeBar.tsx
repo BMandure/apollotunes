@@ -4,6 +4,7 @@ function VolumeBar(props: {
   clickVolumeRef: React.RefObject<HTMLProgressElement>;
   audioElem: HTMLAudioElement | null;
   checkVolumeWidth: any;
+  volume: number;
 }) {
   //TODO: Avaiablility to change volume with paused song
   return (
@@ -19,7 +20,7 @@ function VolumeBar(props: {
         max={1}
         id="volume"
         className="w-[150px] h-[7px] hover:cursor-pointer"
-        value={props.audioElem?.volume}
+        value={props.volume}
         onClick={props.checkVolumeWidth}
       />
     </>

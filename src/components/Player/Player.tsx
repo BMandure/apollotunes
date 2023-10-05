@@ -25,6 +25,7 @@ function Player(props: {
   const clickVolumeRef = useRef<HTMLProgressElement>(null);
   const [volumeIcon, setVolumeIcon] = useState("bi-volume-up");
   const [index, setIndex] = useState(0);
+  const [volume, setVolume] = useState(0.5);
 
   useEffect(() => {
     if (!props.audioElem) return;
@@ -53,6 +54,7 @@ function Player(props: {
     if (width && props.audioElem) {
       const totalProgress = (offset / width) * 100;
       props.audioElem.volume = totalProgress / 100;
+      setVolume(props.audioElem.volume);
     }
   };
 
@@ -61,7 +63,6 @@ function Player(props: {
       props.audioElem.muted = !props.audioElem.muted;
     }
   };
-  console.log(props.currentSong.duration);
   return (
     <div className="h-[100%] w-full flex justify-between px-3">
       <div id="songInfo" className="flex items-center gap-3 min-w-[250px]">
@@ -124,6 +125,7 @@ function Player(props: {
           clickVolumeRef={clickVolumeRef}
           audioElem={props.audioElem}
           checkVolumeWidth={checkVolumeWidth}
+          volume={volume}
         />
       </div>
     </div>
