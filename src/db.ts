@@ -1,4 +1,6 @@
-export const songs = [
+import { Song } from "./types_interfaces";
+
+export const songs: Song[] = [
   {
     title: "Take Me To Church",
     artist: "Ed Sheeran",

@@ -4,9 +4,13 @@ import { useState } from "react";
 
 function Song() {
   const [isHovering, setIsHovering] = useState<boolean>();
+  const [isFavourite, setIsFavourite] = useState<boolean>();
 
   const handlerPlayBtn = () => {
     console.log("Play Pressed");
+  };
+  const handleFavouriteBtn = () => {
+    setIsFavourite(!isFavourite);
   };
 
   return (
@@ -37,7 +41,19 @@ function Song() {
       <td>Album Name</td>
       <td>03/10/2023</td>
       <td className="w-[150px]">
-        3:45 <button className="mx-5">❤️</button>
+        <span>3:45</span>
+        <button className="mx-5" onClick={handleFavouriteBtn}>
+          <i
+            className={`bi ${
+              isFavourite ? "bi-heart-fill" : "bi-heart"
+            } hover:cursor-pointer p-2`}
+            style={{
+              fontSize: "15px",
+              color: isFavourite ? "red" : "white",
+            }}
+            onClick={handlerPlayBtn}
+          ></i>
+        </button>
       </td>
     </tr>
   );

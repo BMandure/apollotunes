@@ -4,29 +4,33 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import "./Dashboard.css";
 import { songs as songImp } from "../db";
 import { Outlet } from "react-router-dom";
+import { InfoSong } from "../types_interfaces";
 
 function Dashboard() {
-  //TODO: Change importedSongs to audios fetched
+  //TODO: Change importedSongs to audios and songData to data fetched
 
   //---------TEST---------
 
   const importedSong1: any = new Audio(songImp[0].route);
   const importedSong2: any = new Audio(songImp[1].route);
   const importedSong3: any = new Audio(songImp[2].route);
-  const songData = [...songImp];
-  const stateArray: HTMLAudioElement[] = [];
-  stateArray.push(importedSong1);
-  stateArray.push(importedSong2);
-  stateArray.push(importedSong3);
+  const songData1 = songImp[0];
+  const songData2 = songImp[1];
+  const songData3 = songImp[2];
+  const stateArray: InfoSong[] = [];
+  stateArray.push({ audio: importedSong1, info: songData1 });
+  stateArray.push({ audio: importedSong2, info: songData2 });
+  stateArray.push({ audio: importedSong3, info: songData3 });
 
   //----------------------
 
   const [songs, setSongs] = useState(stateArray);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentDataSong, setCurrentDataSong] = useState(songData[0]);
+  const [currentDataSong, setCurrentDataSong] = useState(songData1);
   const [currentSong, setCurrentSong] = useState(importedSong1);
 
   const audioElem = useRef<HTMLAudioElement>(null);
+
   useEffect((): void => {
     isPlaying ? audioElem.current?.play() : audioElem.current?.pause();
   }, [isPlaying]);
@@ -39,10 +43,10 @@ function Dashboard() {
       setCurrentSong({
         ...currentSong,
         progress: (currentTime / duration) * 100,
-        length: duration,
       });
     }
   };
+
   return (
     <div className="dashboard-container-wrapper">
       <div className="dashboard-container-one bg-zinc-900 rounded-xl">

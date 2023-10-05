@@ -1,28 +1,27 @@
-import { useState } from "react";
+import { InfoSong } from "../../types_interfaces";
 function PlayerPrevious(props: {
-  songs: any;
+  songs: InfoSong[];
   setCurrentSong: any;
   currentSong: any;
   currentDataSong: any;
   setCurrentDataSong: any;
   setIsPlaying: any;
+  index: number;
+  setIndex: any;
 }) {
   //TODO Change Any
 
-  let currentIndex = props.songs.indexOf(props.currentSong);
-  let length = props.songs.length;
+  const length = props.songs.length;
 
-  const [index, setIndex] = useState(currentIndex);
-
-  const skipBack = (): void => {
-    if (index === 0) {
-      props.setCurrentSong(props.songs[length - 1]);
-      props.setIsPlaying(true);
-      setIndex(length - 1);
+  const skipBack = () => {
+    if (props.index === 0) {
+      props.setCurrentSong(props.songs[length - 1].audio);
+      props.setCurrentDataSong(props.songs[length - 1].info);
+      props.setIndex(length - 1);
     } else {
-      props.setCurrentSong(props.songs[index - 1]);
-      props.setIsPlaying(true);
-      setIndex(index - 1);
+      props.setCurrentSong(props.songs[props.index - 1].audio);
+      props.setCurrentDataSong(props.songs[props.index - 1].info);
+      props.setIndex(props.index - 1);
     }
   };
   return (
