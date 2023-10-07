@@ -2,6 +2,7 @@ import SidebarButton from "./SidebarButton";
 import home from "../../assets/icons/home.svg";
 import fav from "../../assets/icons/fav.svg";
 import logout from "../../assets/icons/logout.svg";
+import plImg from "../../assets/genres/kpopGenre.jpg";
 import logo from "../../assets/logo.svg";
 
 function Sidebar() {
@@ -13,7 +14,13 @@ function Sidebar() {
           <h1 className="text-xl py-5">APOLLOTUNES</h1>
         </li>
         <li>
-          <SidebarButton text="Home" imgSrc={home} link="/" redButton={false} />
+          <SidebarButton
+            text="Home"
+            imgSrc={home}
+            link="/"
+            redButton={false}
+            bigIcons={false}
+          />
         </li>
         <li>
           <SidebarButton
@@ -21,62 +28,93 @@ function Sidebar() {
             imgSrc={fav}
             link="/favourites"
             redButton={false}
+            bigIcons={false}
           />
         </li>
         <li className="flex-grow overflow-y-auto my-3 me-2">
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
           />
           <SidebarButton
             text="Playlist Name"
-            imgSrc={logo}
+            imgSrc={plImg}
             link="/favourites"
             redButton={false}
+            bigIcons={true}
+          />
+          <SidebarButton
+            text="Playlist Name"
+            imgSrc={plImg}
+            link="/favourites"
+            redButton={false}
+            bigIcons={true}
+          />
+          <SidebarButton
+            text="Playlist Name"
+            imgSrc={plImg}
+            link="/favourites"
+            redButton={false}
+            bigIcons={true}
+          />
+          <SidebarButton
+            text="Playlist Name"
+            imgSrc={plImg}
+            link="/favourites"
+            redButton={false}
+            bigIcons={true}
           />
         </li>
         <li>
@@ -85,6 +123,7 @@ function Sidebar() {
             imgSrc={logout}
             link="/login"
             redButton={true}
+            bigIcons={false}
           />
         </li>
       </ul>

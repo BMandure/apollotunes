@@ -2,7 +2,13 @@ import imgProv from "../assets/genres/rockGenre.jpg";
 
 import { useState } from "react";
 
-function Song() {
+type songInfo = {
+  name: string;
+  album: string;
+  dateAdded: string;
+};
+
+function Song(props: { position: number; songInfo: songInfo }) {
   const [isHovering, setIsHovering] = useState<boolean>();
   const [isFavourite, setIsFavourite] = useState<boolean>();
 
@@ -25,32 +31,27 @@ function Song() {
     >
       <td className="!text-center">
         {!isHovering ? (
-          1
+          <span>{props.position}</span>
         ) : (
           <i
-            className="bi bi-play-fill hover:cursor-pointer p-2"
-            style={{ fontSize: "20px" }}
+            className="bi bi-play-fill hover:cursor-pointer p-2 text-[20px]"
             onClick={handlerPlayBtn}
           ></i>
         )}
       </td>
       <td className="flex items-center gap-5">
         <img src={imgProv} alt="" className="h-[50px] w-[50px] my-2" />
-        <span>Song Name</span>
+        <span>{props.songInfo.name}</span>
       </td>
-      <td>Album Name</td>
-      <td>03/10/2023</td>
+      <td>{props.songInfo.album}</td>
+      <td>{props.songInfo.dateAdded}</td>
       <td className="w-[150px]">
         <span>3:45</span>
         <button className="mx-5" onClick={handleFavouriteBtn}>
           <i
             className={`bi ${
-              isFavourite ? "bi-heart-fill" : "bi-heart"
-            } hover:cursor-pointer p-2`}
-            style={{
-              fontSize: "15px",
-              color: isFavourite ? "red" : "white",
-            }}
+              isFavourite ? "bi-heart-fill text-red-500" : "bi-heart text-white"
+            } hover:cursor-pointer p-2 text-[15px]`}
             onClick={handlerPlayBtn}
           ></i>
         </button>

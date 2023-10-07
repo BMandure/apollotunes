@@ -16,9 +16,9 @@ function PlayerButton(props: {
   return (
     <button onClick={PlayPause} className="rounded-full hover:bg-zinc-700">
       {props.isPlaying ? (
-        <i className="bi bi-pause" style={{ fontSize: "30px" }}></i>
+        <i className="bi bi-pause text-[30px]"></i>
       ) : (
-        <i className="bi bi-play" style={{ fontSize: "30px" }}></i>
+        <i className="bi bi-play text-[30px]"></i>
       )}
     </button>
   );

@@ -5,6 +5,7 @@ function SidebarButton(props: {
   imgSrc: string;
   link: string;
   redButton: boolean;
+  bigIcons: boolean;
 }) {
   return (
     <Link
@@ -13,7 +14,13 @@ function SidebarButton(props: {
         props.redButton ? "hover:bg-red-800" : "hover:bg-zinc-700"
       }`}
     >
-      <img src={props.imgSrc} alt="sidebar_icon" className="w-[30px]" />
+      <img
+        src={props.imgSrc}
+        alt="sidebar_icon"
+        className={`${
+          !props.bigIcons ? "w-[30px] h-[30px]" : "w-[50px] h-[50px]"
+        }`}
+      />
       {props.text}
     </Link>
   );

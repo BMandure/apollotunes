@@ -10,10 +10,7 @@ function VolumeBar(props: {
   return (
     <>
       <button onClick={() => props.muteSong()}>
-        <i
-          className={`bi ${props.volumeIcon}`}
-          style={{ fontSize: "25px" }}
-        ></i>
+        <i className={`bi ${props.volumeIcon} text-[25px]`}></i>
       </button>
       <progress
         ref={props.clickVolumeRef}

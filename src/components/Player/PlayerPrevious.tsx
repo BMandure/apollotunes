@@ -26,7 +26,7 @@ function PlayerPrevious(props: {
   };
   return (
     <button onClick={skipBack} className="rounded-full hover:bg-zinc-700">
-      <i className="bi bi-skip-start" style={{ fontSize: "25px" }}></i>
+      <i className="bi bi-skip-start text-[25px]"></i>
     </button>
   );
 }

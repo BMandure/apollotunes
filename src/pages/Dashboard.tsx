@@ -65,7 +65,7 @@ function Dashboard() {
       <div className="dashboard-container-one bg-zinc-900 rounded-xl">
         <Sidebar />
       </div>
-      <div className="dashboard-container-two bg-zinc-900 rounded-xl p-3">
+      <div className="dashboard-container-two bg-zinc-900 rounded-xl">
         <Outlet />
       </div>
       <div className="dashboard-container-three flex items-center">

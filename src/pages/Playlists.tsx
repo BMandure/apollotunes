@@ -4,16 +4,17 @@ import SongList from "../components/SongList";
 
 function Playlists() {
   const { state } = useLocation();
+  console.log(state);
   return (
     <section className="flex flex-col h-full">
       <Header
-        plName={state.genreName}
-        artistName={state.artist}
-        img={state.genreImg}
+        plName={state.name}
+        artistName={state.artistName}
+        img={state.img}
         isArtist={state.isArtist}
-        qtySongs={4}
+        qtySongs={13}
       />
-      <div className="flex flex-col overflow-y-auto mt-5">
+      <div className="flex flex-col overflow-y-auto">
         <SongList />
       </div>
     </section>

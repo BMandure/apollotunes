@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="favourites" element={<Favourites />} />
           <Route path="/:genreSlug" element={<Playlists />} />
+          <Route path="/:artistSlug" element={<Playlists />} />
         </Route>
       </Routes>
     </main>

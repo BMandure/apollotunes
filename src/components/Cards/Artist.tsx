@@ -8,15 +8,16 @@ function Artist(props: { name: string; img: string }) {
   return (
     <Link
       to={`/${slug}`}
-      state={{ genreName: props.name, genreImg: props.img, isArtist: true }}
-      className="bg-customDark rounded-xl flex flex-col gap-4 p-3 hover:bg-zinc-800 hover:cursor-pointer group w-[200px] h-[270px]"
+      state={{
+        artistName: props.name,
+        img: props.img,
+        isArtist: true,
+      }}
+      className="bg-customDark rounded-xl flex flex-col p-2 hover:bg-zinc-800 hover:cursor-pointer group w-[200px] h-[270px]"
     >
       <div className="relative">
         <span className=" group-hover:bg-main group-hover:visible invisible absolute bottom-1 right-1 w-[50px] h-[50px] [&>img]:w-[50px] [&>img]:h-[50px] bg-main rounded-full hover:scale-105 pt-[2px] mx-auto">
-          <i
-            className="bi bi-play-fill"
-            style={{ fontSize: "30px", color: "black" }}
-          ></i>
+          <i className="bi bi-play-fill text-[30px] text-black"></i>
         </span>
         <img
           src={props.img}
@@ -25,7 +26,7 @@ function Artist(props: { name: string; img: string }) {
         />
       </div>
       {/*TODO: Change Alt*/}
-      <div className="flex flex-col flex-1 justify-center [&]:text-start">
+      <div className="flex flex-col flex-1 justify-center [&]:text-start pt-2">
         <span className="font-extrabold tracking-wide">{props.name}</span>
         <small>Artist</small>
       </div>

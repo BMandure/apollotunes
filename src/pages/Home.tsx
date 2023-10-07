@@ -10,7 +10,7 @@ import artistImg from "../assets/genres/lofiGenre.jpg";
 
 function Home() {
   return (
-    <section className="px-2">
+    <section className="p-5 rounded-md">
       <article id="genres-home-list" className="py-2">
         <div className="flex justify-between items-center">
           <h2 className="text-start text-xl pb-5">Genres</h2>
@@ -67,13 +67,13 @@ function Home() {
         </div>
         <div className="flex justify-between flex-wrap gap-2">
           {/*TODO: Bootstrap Columns or alternative */}
-          <PlaylistAlbum />
-          <PlaylistAlbum />
-          <PlaylistAlbum />
-          <PlaylistAlbum />
-          <PlaylistAlbum />
-          <PlaylistAlbum />
-          <PlaylistAlbum />
+          <PlaylistAlbum name="Playlist 1" artist="Lofi Girl" img={artistImg} />
+          <PlaylistAlbum name="Playlist 2" artist="Lofi Girl" img={artistImg} />
+          <PlaylistAlbum name="Playlist 3" artist="Lofi Girl" img={artistImg} />
+          <PlaylistAlbum name="Playlist 4" artist="Lofi Girl" img={artistImg} />
+          <PlaylistAlbum name="Playlist 5" artist="Lofi Girl" img={artistImg} />
+          <PlaylistAlbum name="Playlist 6" artist="Lofi Girl" img={artistImg} />
+          <PlaylistAlbum name="Playlist 7" artist="Lofi Girl" img={artistImg} />
         </div>
       </article>
     </section>
