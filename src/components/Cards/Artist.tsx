@@ -22,7 +22,7 @@ function Artist(props: { name: string; img: string }) {
         <img
           src={props.img}
           alt="..."
-          className="w-full h-[170px] object-cover rounded-full mx-auto"
+          className="w-full h-[175px] object-cover rounded-full mx-auto"
         />
       </div>
       {/*TODO: Change Alt*/}

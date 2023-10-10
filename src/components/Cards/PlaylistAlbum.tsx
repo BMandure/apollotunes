@@ -22,7 +22,7 @@ function PlaylistAlbum(props: { name: string; artist: string; img: string }) {
         <img
           src={props.img}
           alt="Thumbnail of... "
-          className="w-full h-[170px] object-cover rounded-2xl mx-auto"
+          className="w-full h-[175px] object-cover rounded-2xl mx-auto"
         />
       </div>
       {/*TODO: Change Alt*/}
