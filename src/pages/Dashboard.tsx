@@ -53,10 +53,12 @@ function Dashboard() {
       setCurrentSong(songs[0].audio);
       setCurrentDataSong(songs[0].info);
       setIndex(0);
+      setIsPlaying(true);
     } else {
       setCurrentSong(songs[index + 1].audio);
       setCurrentDataSong(songs[index + 1].info);
       setIndex(index + 1);
+      setIsPlaying(true);
     }
   };
 

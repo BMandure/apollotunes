@@ -66,7 +66,7 @@ function Player(props: {
     }
   };
   return (
-    <div className="h-[100%] w-full flex justify-between px-3">
+    <div className="h-[100%] w-full flex justify-between">
       <div id="songInfo" className="flex items-center gap-3 min-w-[250px]">
         <img
           src={testImg}

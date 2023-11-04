@@ -45,8 +45,7 @@ function Song(props: { position: number; songInfo: songInfo }) {
       </td>
       <td>{props.songInfo.album}</td>
       <td>{props.songInfo.dateAdded}</td>
-      <td className="w-[150px]">
-        <span>3:45</span>
+      <td className="w-[50px]">
         <button className="mx-5" onClick={handleFavouriteBtn}>
           <i
             className={`bi ${
@@ -55,6 +54,9 @@ function Song(props: { position: number; songInfo: songInfo }) {
             onClick={handlerPlayBtn}
           ></i>
         </button>
+      </td>
+      <td className="w-[50px] pe-5">
+        <span className="block text-end">3:45</span>
       </td>
     </tr>
   );

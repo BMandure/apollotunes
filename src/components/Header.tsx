@@ -11,7 +11,7 @@ function Header(props: {
   };
   console.log(props.isArtist, props.plName);
   return (
-    <article className="h-[35vh] rounded-t-xl bg-gradient-to-t from-transparent to-main flex justify-center p-5 flex-col gap-2">
+    <article className="h-[35vh] rounded-t-xl bg-gradient-to-t from-transparent to-main flex justify-center p-5 flex-col gap-5">
       <span className="flex h-[200px] w-full rounded-xl items-center">
         <img
           src={props.img}

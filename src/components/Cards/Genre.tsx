@@ -17,7 +17,7 @@ function Genre(props: { name: string; img: string }) {
       />
       {/*TODO: Change Alt */}
       <span className="text-lg font-semibold tracking-wide">{props.name}</span>
-      <div className="flex flex-1 justify-end px-5">
+      <div className="flex flex-1 justify-end px-5 h-full items-center">
         <span className="group-hover:bg-main group-hover:visible invisible rounded-full w-[50px] h-[50px] [&>img]:w-[50px] [&>img]:h-[50px] hover:scale-105 pt-[2px]">
           <i className="bi bi-play-fill text-[30px] text-black"></i>
         </span>
